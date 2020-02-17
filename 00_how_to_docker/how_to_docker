@@ -1,0 +1,24 @@
+docker-machine create --driver virtualbox Char
+docker-machine start/stop Char
+docker-machine ip Char
+define variables needed by vm in the general env of terminal, to run docker ps without errors
+	eval "$(docker-machine env Char)"
+use docker build -f to point to a file anywhere on the system
+env | grep DOCKER # show env variables (maybe)
+	parser directives at the top of the dockerfile (before builder instructions)
+		# example
+		# directive = value
+	^ does not work because it appeared after a comment
+	not case sensitive
+	non-line breaking white-spaces are permitted
+docker pull hello-world
+docker run hello-world
+	-d is for running in the background
+	docker pull nginx
+	docker rename nginx overlord (--name?)
+	docker run --restart always -p 5000:80
+docker pull alpine
+docker run alpine
+docker run -it --rm alpine /bin/ash
+docker pull debian
+docker run debian
